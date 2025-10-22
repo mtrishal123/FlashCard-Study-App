@@ -2,11 +2,11 @@
   "name": "flashcard-server",
   "version": "1.0.0",
   "description": "Backend for FlashCard Study App",
-  "main": "server/services/server.js",
+  "main": "services/server.js",
   "type": "module",
   "scripts": {
-    "start": "node server/services/server.js",
-    "build": "cd client && npm install && npm run build"
+    "start": "node services/server.js",
+    "dev": "nodemon services/server.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
