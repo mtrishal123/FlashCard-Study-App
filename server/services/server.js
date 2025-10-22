@@ -9,7 +9,7 @@ import { createServerRoutes } from '../../controller.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(cors({
