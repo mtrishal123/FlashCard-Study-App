@@ -7,7 +7,7 @@ import {
   deleteSession,
   isValidUsername,
   userExists,
-} from './models/session.js';
+} from './server/models/session.js';
 import {
   getDecks,
   createDeck,
@@ -16,7 +16,7 @@ import {
   addFlashcard,
   updateFlashcard,
   deleteFlashcard,
-} from './models/decks.js';
+} from './server/models/decks.js';
 
 export function createServerRoutes(app) {
   // SESSION ROUTES

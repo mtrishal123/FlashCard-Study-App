@@ -1,0 +1,142 @@
+.editor-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flashcard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.flashcard-form input {
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.flashcard-form button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #000;
+  color: white;
+  border: 0.125rem solid white;
+  border-radius: 0.375rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flashcard-card {
+  background-color: #222;
+  color: #0ff;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  word-break: break-word;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 1rem #00ffff44;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 120px;
+  position: relative;
+}
+
+.card-text {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.delete-button {
+  background-color: #ff1744;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.back-button {
+  background-color: #444;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.empty {
+  font-style: italic;
+  color: #ccc;
+}
+
+.error {
+  color: #ff4c4c;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.deck-indicator {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #00ffff;
+}
+
+.char-counter {
+  font-size: 0.9rem;
+  color: #888;
+  margin: -0.5rem 0 0.5rem;
+}
+
+.edit-input {
+  width: 100%;
+  max-width: 28rem;
+  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.edit-actions button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.edit-actions button:hover {
+  background-color: #004f99;
+}

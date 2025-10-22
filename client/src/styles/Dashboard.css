@@ -1,0 +1,48 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #111;
+    color: #fff;
+    box-sizing: border-box;
+  }
+  
+  /* Fixed header at the top */
+  .dashboard-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 12px #00ffff44;
+  }
+  
+  /* Content below the header */
+  .dashboard-content {
+    flex: 1;
+    padding: 6rem 2rem 2rem 2rem; /* Top padding to avoid header overlap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  .logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .logout-button:hover {
+    background-color: #d32f2f;
+  }
+  
