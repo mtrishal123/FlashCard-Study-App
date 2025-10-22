@@ -4,11 +4,11 @@
   "description": "Fullstack FlashCard App (Express + React)",
   "type": "module",
   "scripts": {
-    "start": "node server/services/server.js",
-    "build": "cd client && npm install && npm run build"
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && npm start"
   },
   "engines": {
-    "node": ">=18.x"
+    "node": "20.x"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
