@@ -1,146 +1,120 @@
-# **Flashcard Quiz App**
+# **Flashcard Study App**
 
-The **Flashcard Quiz App** is a full-stack single-page application (SPA) built with **React (Vite)** on the frontend and **Node.js (Express)** on the backend. It enables users to **create decks**, add/edit **flashcards**, and **review them interactively** like a quiz — with built-in **session-based login**, **form validation**, **auth handling**, and a smooth, responsive UI.
+The **Flashcard Study App** is a full-stack single-page application (SPA) built with **React (Vite)** on the frontend and **Node.js (Express)** on the backend.  
+It enables users to **create decks**, manage **flashcards**, and **review them quiz-style** — complete with **session-based authentication**, **form validation**, and a smooth, responsive UI.  
+The app is now fully **deployed on Render** at  
+👉 **[https://flashcard-study-app-z340.onrender.com](https://flashcard-study-app-z340.onrender.com)**  
 
 ---
 
 ## 🧠 **Key Features**
 
 ### ✅ Authentication & Session
-- Users must **register** and then **log in** to use the app.
-- A user with the name `"dog"` is explicitly **banned**.
-- Auth is handled using **cookie-based session tracking**.
-- Auth persistence across pages using a **secure SID** (stored in cookies).
-- **Redirects** to login on session expiration (`AUTH_MISSING`).
+- Register → Login workflow using **cookie-based sessions**.
+- Persistent authentication via secure **SID** cookie.
+- `"dog"` username is explicitly **banned**.
+- Automatic logout and redirect on session expiration (`AUTH_MISSING`).
 
 ### 🗂️ Deck & Flashcard Management
-- Users can:
-  - Create decks (1–40 char title validation).
-  - Edit and delete flashcards within decks.
-  - Each flashcard has a **question** and **answer**, limited to **100 characters**.
-- Visual feedback and character counters on input fields.
+- Create, edit, or delete **decks** (1–40 characters).
+- Add, edit, or delete **flashcards** (question + answer, up to 100 characters).
+- Real-time validation and character counters on inputs.
 
-### 📝 Quiz/Review Mode
-- Flip through flashcards one by one.
-- Submit your answer and get instant feedback.
-- Score tracked in real time, with **best score persistence**.
-- **Timer per question** (auto-next when time’s up).
+### 📝 Quiz / Review Mode
+- Flip through flashcards interactively.
+- Submit answers and get instant feedback.
+- Score tracked live with **best-score persistence**.
+- Optional **per-question timer**.
 
 ### 🔥 User Feedback & Validation
-- Invalid inputs are clearly flagged.
-- Real-time **character counters**.
-- **Network error** messages shown only **once** until recovery.
-- Proper messages on:
-  - Empty decks
-  - Empty flashcards
-  - Successful registration
+- Clear error messages for invalid input.
+- “Network error” shown only once until recovery.
+- Distinct UI feedback for:
+  - Empty decks / empty flashcards  
+  - Successful registration / deletion / update
 
 ---
 
-## 🧱 Technology Stack
+### 🧪 Using the App
 
-| Layer        | Tech               |
-|--------------|--------------------|
-| Frontend     | React + Vite       |
-| State Mgmt   | React useState     |
-| Backend      | Node.js + Express  |
-| Session      | `cookie-parser`    |
-| Styling      | CSS (modular files)|
-| Build Tool   | Vite               |
+-Go to https://flashcard-study-app-z340.onrender.com
+
+-Register a username (except "dog")
+
+-Log in — your session cookie authenticates you automatically
+
+-Create a deck and add flashcards
+
+-Enter Review Mode to quiz yourself
+
+-Track and improve your score in real time
 
 ---
 
-## 🚀 How to Run
+## 🧱 **Technology Stack**
 
-### ✅ Prerequisites
-- Node.js (v18+)
-- npm
+| Layer | Technology |
+|-------|-------------|
+| Frontend | React (Vite) |
+| State Management | React Hooks (`useState`, `useEffect`) |
+| Backend | Node.js + Express |
+| Session | `cookie-parser` |
+| Styling | Modular CSS |
+| Build Tool | Vite |
+| Deployment | Render (Fullstack App) |
 
-### 📦 Installation
+---
+
+## ⚙️ **Environment Setup**
+
+### `client/.env`
+change it to
+VITE_API_BASE_URL=http://localhost:3000
+
+### `server/.env`
+PORT=3000
+CORS_ORIGIN=http://localhost:5173
+
+
+*(These are for local development only — production values are configured on Render.)*
+
+---
+
+## 🧩 **Local Development**
+
+Run frontend and backend in parallel:
+
 ```bash
-git clone <your-repo>
-cd final
+# Terminal 1 – Backend
+cd server
 npm install
-```
-
-### 🔨 Build and Start
-```bash
-npm run build
-npm start     
-```
-
-### 💻 Development Mode (Optional)
-```bash
 npm run dev
-```
 
----
+# Terminal 2 – Frontend
+cd client
+npm install
+npm run dev
 
-## 🧪 How to Use
+Visit ➡️ http://localhost:5173
 
-1. Visit `http://localhost:3000`
-2. Register a new username (except `"dog"`)
-3. Login with that username
-4. Create a deck and flashcards
-5. Enter **Review Mode** to start a quiz
-6. Track your score and retry to improve it!
+🔨 Production Build & Start
 
----
+# From project root
+npm run build
+npm start
 
-## 📁 Project Structure
+npm start
+This will:
 
-```
-final/
-├── controller.js         # Express routes
-├── models/               # In-memory DB logic (sessions, decks)
-├── server.js             # App entry point (Express + routes)
+Build the frontend (client/dist)
 
+Serve it through Express (server/services/server.js)
 
-src/
-├── components/           # All React components
-├── services/             # API calls (fetch abstraction)
-└── styles/               # Modular CSS files
-```
+Start the app on http://localhost:3000
 
----
+##  📸  Assets & Licensing
 
-## 📸 Media & Licensing
+loading.svg and logout.svg from Google Fonts Icons
+ — free for use with attribution.
 
-- `loading.svg` sourced from [Google Fonts](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:sync:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=loading&icon.size=24&icon.color=%23e3e3e3) – Free license with attribution.
-- `logout.svg` sourced from [Google Fonts](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:logout:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=logout&icon.size=24&icon.color=%23e3e3e3) – Free license with attribution.
-- All UI assets/icons are self-designed or sourced from free-to-use platforms under open licenses.
-
----
-
-## 🌟 Implemented Bonus Requirements
-
-### 🔁 Extra Service Interaction Complexity
-| Bonus                                 | Where Implemented         |
-|--------------------------------------|----------------------------|
-| **Additional HTTP Methods** x3       | `controller.js`            |
-| **Filtered services by SID/session** | `controller.js`            |
-| **Flashcard Add/Delete/Update**      | `controller.js`            |
-
-### 📦 Extra State Complexity
-| Bonus                                      | Where Implemented         |
-|-------------------------------------------|----------------------------|
-| **Multiple visual pages/screens**         | `App.jsx`, `Dashboard.jsx` |
-| **Timer per card (interactive state)**    | `ReviewMode.jsx`           |
-| **Complex form validation & counters**    | `FlashcardEditor.jsx`      |
-| **Session-based redirection**             | `App.jsx`, `Login.jsx`     |
-| **Frontend/backend separation of concerns**| `src/` & `controller.js`   |
-
-
-
----
-
-## 💯 Final Thoughts
-
-This project was built with a strong focus on **discoverability**, **clean architecture**, and **interactive UX**. It shows end-to-end skills including:
-
-- Full RESTful API handling
-- Persistent state and score logic
-- Defensive programming (network issues, auth errors)
-- Visual clarity with responsive layout
-
-We hope you enjoy testing it as much as we did building it!
+All other icons and visuals are self-made or open-licensed.
